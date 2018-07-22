@@ -2,7 +2,7 @@ class Application
   
   def call(env)
     resp = Rack::Response.new 
-    req = Rack::Request(env)
+    req = Rack::Request.new(env)
     
     if req.path == "/items/#{Item}"
       resp.write "#{Item.price}"
