@@ -4,7 +4,12 @@ class Application
     resp = Rack::Response.new 
     req = Rack::Request(env)
     
-    
+    if req.path=="/songs"
+      resp.write "You requested the songs"
+    else
+      resp.write "Route not found"
+      resp.status = 404
+    end
     
   end 
 end 
